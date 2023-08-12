@@ -1,4 +1,7 @@
 #include "Main.h"
+#include "listfolders3/wpkotlin_c.demo.list_folders/MainLogic.h"
+
+#define z105main Z105main
 
 Z102* ZC102() {
 	Z102* R = GC_malloc(sizeof(Z102));
@@ -8,11 +11,13 @@ Z102* ZC102() {
 
  void/*Unit*/ Z102main(Z102* vsc) {
 	bool vsb;
-	Z102 vsr;
+	//Z102 vsr; //??
 	{
-		/*267*//*879*/vt1 = /*828*/arguments is UNKNOWN;
+		void* vt1=NULL;
+		// /*267*//*879*/vt1 = /*828*/arguments is UNKNOWN;
 		/*427-2*/z105main(ZC105(), /*669*//*879*/vt1);
-		/*249*//*501*//*912*/vsc->vmExitCode = ExitSuccess;
+		/*249*//*501*//*912*/
+		vsc->vmExitCode = ExitSuccess;
 	}
-	return vsr;
+	//return vsr;
 }

@@ -1,3 +1,6 @@
+#ifndef elinc_Prelude_Prelude_h
+#define elinc_Prelude_Prelude_h 1
+
 //#define bool int
 #include <stdbool.h>
 
@@ -13,8 +16,9 @@ char *
 
  typedef struct {
 	int _tag;
+} ooZ110;  // class Boolean
 
-} Z110;  // class Boolean
+typedef int Z110;
 
  typedef struct {
 	int _tag;
@@ -24,3 +28,6 @@ char *
 typedef int Z114;
 
 Z114 Z113arguments(Z113* vsc);
+
+
+#endif

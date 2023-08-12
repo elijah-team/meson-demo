@@ -1,3 +1,4 @@
+#include <gc.h>
 #include "__MODULE__.h"
 
 //__MODULE__
@@ -10,4 +11,3 @@ ZN109* ZNC109() {
 	zN__MODULE___instance = R;
 	return R;
 } // namespace `__MODULE__'
-

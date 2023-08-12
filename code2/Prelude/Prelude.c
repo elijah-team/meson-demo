@@ -9,12 +9,13 @@ Z113* ZC113() {
 	return R;
 } // class Arguments
 
+/*
  Z110* ZC110() {
 	Z110* R = GC_malloc(sizeof(Z110));
 	R->_tag = 110;
 	return R;
 } // class Boolean
-
+*/
 /*
  Z114* ZC114() {
 	Z114* R = GC_malloc(sizeof(Z114));
