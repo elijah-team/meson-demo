@@ -1,11 +1,11 @@
 #include <gc.h>
 #include "Prelude.h"
 
-Z113* ZC113() {
+Z113* ZC113(int _argc, char **_argv) {
 	Z113* R = GC_malloc(sizeof(Z113));
 	R->_tag = 113;
-	R->vmargument_array = 0;
-	R->vmargument_count_ = 0;
+	R->vmargument_array = _argv;
+	R->vmargument_count_ = _argc;
 	return R;
 } // class Arguments
 

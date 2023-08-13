@@ -1,8 +1,12 @@
+#include "Prelude/Prelude.h"
 #include "listfolders3/Main.h"
-//#include "Prelude/..."
 
-int main() {
-  Z102main(ZC102());
+int main(int argc, char**argv) {
 
-  return 0; // ExitCode
+  Z113* __a = ZC113(argc, argv);
+  Z102* __m = ZC102();
+
+  Z102main(__m);
+
+  return __m->vmExitCode; // ExitCode
 }
