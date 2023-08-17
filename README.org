@@ -1,0 +1,30 @@
+* Meson
+  :PROPERTIES:
+  :CUSTOM_ID: meson
+  :END:
+#+begin_example
+cd code2
+mkdir _build
+cd _build
+meson ..
+ninja
+#+end_example
+
+=fail!!=
+
+#+begin_example
+cd code2
+make
+#+end_example
+
+=pass!!=
+
+** Supposed to happen
+   :PROPERTIES:
+   :CUSTOM_ID: supposed-to-happen
+   :END:
+1. Build 3 archives from subprojects/subdirectories
+2. Link into final executable
+
+(Yes, I know the =ar= command, just a POC...)
+(Yes, I know about =cmake=..., that's not the question...)
