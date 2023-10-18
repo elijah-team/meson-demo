@@ -21,6 +21,8 @@ Z112 *z107listFiles(Z107 *vsc, Z__543 *filterFunction) {
   {
     struct dirent *entry;
 
+    if (!vsc->____fn) return vsr;
+
     vsc->____dir = opendir(vsc->____fn);
     vsb = vsc->____dir != NULL;
 
@@ -29,7 +31,7 @@ Z112 *z107listFiles(Z107 *vsc, Z__543 *filterFunction) {
     } else {
       puts("listing:");
 
-      do {      
+      do {
         entry = readdir(vsc->____dir);
         vsb = entry != NULL;
 
