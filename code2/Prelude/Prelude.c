@@ -2,33 +2,25 @@
 #include "Prelude.h"
 
 Z113* ZC113(int _argc, char **_argv) {
-	Z113* R = GC_malloc(sizeof(Z113));
+	Z113* R = (Z113*)GC_malloc(sizeof(Z113));
 	R->_tag = 113;
 	R->vmargument_array = _argv;
 	R->vmargument_count_ = _argc;
 	return R;
 } // class Arguments
 
-/*
- Z110* ZC110() {
-	Z110* R = GC_malloc(sizeof(Z110));
-	R->_tag = 110;
-	return R;
-} // class Boolean
-*/
-/*
- Z114* ZC114() {
-	Z114* R = GC_malloc(sizeof(Z114));
-	R->_tag = 114;
-	return R;
-} // class Integer64
-*/
 Z114 Z113arguments(Z113* vsc) {
-//	bool vsb;
 	Z114 vsr;
-	{
-		/*267*//*879*/vsr = /*124*/vsc->vmargument_count_;
-	}
+
+	vsr = vsc->vmargument_count_;
 	
 	return vsr;
+}
+
+char* z113argument_string(Z113* vsc, int vaindex) {
+	if (vaindex <= vsc->vmargument_count_ && vaindex >= 0) {
+		return vsc->vmargument_array[vaindex];
+		//return "."; //vscode: ugh: vsc->vmargument_array[vaindex];
+	} else
+		return NULL;
 }

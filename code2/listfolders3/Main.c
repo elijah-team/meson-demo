@@ -1,23 +1,15 @@
-#include "Main.h"
+#include "listfolders3/Main.h"
 #include "listfolders3/wpkotlin_c.demo.list_folders/MainLogic.h"
 
-#define z105main Z105main
-
-Z102* ZC102() {
-	Z102* R = GC_malloc(sizeof(Z102));
+Z102* ZC102(Z113 *vsargs) {
+	Z102* R = (Z102*)GC_malloc(sizeof(Z102));
 	R->_tag = 102;
+	R->vsargs = vsargs;
 	return R;
 } // class Main
 
- void/*Unit*/ Z102main(Z102* vsc) {
-	bool vsb;
-	//Z102 vsr; //??
-	{
-		void* vt1=NULL;
-		// /*267*//*879*/vt1 = /*828*/arguments is UNKNOWN;
-		/*427-2*/z105main(ZC105(), /*669*//*879*/vt1);
-		/*249*//*501*//*912*/
-		vsc->vmExitCode = ExitSuccess;
-	}
-	//return vsr;
+void Z102main(Z102* vsc) {
+	Z113* vt1 = (Z113*)vsc->vsargs;
+	z105main(ZC105(), vt1);
+	vsc->vmExitCode = ExitSuccess;
 }

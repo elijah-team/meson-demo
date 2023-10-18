@@ -1,31 +1,26 @@
-* Meson
+* End Result (not finished)
   :PROPERTIES:
-  :CUSTOM_ID: meson
+  :CUSTOM_ID: end-result
   :END:
 #+begin_example
-cd code2
-mkdir _build
-cd _build
-meson ..
-ninja
-#+end_example
-
-=fail!!=
-
-#+begin_example
+apt install build-essential libgc-dev libglib2.0-dev # ?? wfm
 cd code2
 make
+./B/listfolders3.exe
+#gdb ./B/listfolders3.exe # 😃 💩 🤣
 #+end_example
 
-=pass!!=
+#+begin_example
+cargo install just
+just
+#+end_example
 
 ** Supposed to happen
    :PROPERTIES:
    :CUSTOM_ID: supposed-to-happen
    :END:
-1. Build 3 archives from subprojects/subdirectories
-2. Link into final executable
+1. ✅ Build
+2. (Not) crash
 
-(Yes, I know the =ar= command, just a POC...)
-
-(Yes, I know about =cmake=..., that's not the question...)
+- Ignore meson files
+- Ignore Justfilez

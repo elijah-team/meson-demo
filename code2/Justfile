@@ -1,7 +1,7 @@
-CC=c++ -g `pkg-config --cflags glib-2.0`
-CODE=.
+CC := "c++ -g" + `pkg-config --cflags glib-2.0`
+CODE := "."
 
-all: prelude std_collections std_io listfolders3_wpkotlin_c_demo_list_folders main listfolders3.exe
+all: prelude std_collections std_io listfolders3_wpkotlin_c_demo_list_folders main "listfolders3.exe"
 
 prelude:
 	-mkdir -p B/Prelude/
@@ -26,7 +26,7 @@ main:
 	-mkdir -p B/
 	$(CC) -c $(CODE)/main.c -o B/main.o -I. -I $(CODE)/Prelude -I $(CODE)/stdlib/std.collections -I $(CODE)/stdlib/std.io
 
-listfolders3.exe:
+"listfolders3.exe":
 	-mkdir -p B/stdlib/
 	$(CC) \
 	./B/main.o \
@@ -50,4 +50,4 @@ clean:
 	-rm ./B/stdlib/std.io/Directory.o
 	-rm ./B/listfolders3.exe
 
-.PHONY: all prelude std_collections std_io listfolders3_wpkotlin_c_demo_list_folders main listfolders3.exe clean
+#.PHONY: all prelude std_collections std_io listfolders3_wpkotlin_c_demo_list_folders main listfolders3.exe clean
