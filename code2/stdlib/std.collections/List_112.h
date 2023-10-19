@@ -2,21 +2,19 @@
 #define elinc_list_112 1
 
 #include <stdbool.h>
-
+#include <glib.h>
 
 typedef struct {
 	int _tag;
-
+	GSList *head;
+	GSList *tail;
 } Z112;  // class List
 
 Z112* ZC112();
 
-typedef bool (*Z__543)(void);
+typedef bool (*Z__543)(char*);
 
-// /*267-1*/void* Z112forEach(Z112* vsc, /*543*/Z__543/*<tripleo.elijah.lang.impl.FuncTypeNameImpl@bd4dc25>*/* vaf);
- /*267-1*/void* Z112forEach(Z112* vsc, 
- ///*543*/Z__543/*<tripleo.elijah.lang.impl.FuncTypeNameImpl@bd4dc25>*/*
- 
- void (*vaf)(char*)
- );
+void z112forEach(Z112* vsc, void (*vaf)(char*));
+void z112add(Z112* vsc, void* e);
+
 #endif

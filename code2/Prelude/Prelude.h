@@ -2,6 +2,7 @@
 #define elinc_Prelude_Prelude_h 1
 
 #include <stdbool.h>
+#define None NULL
 
 typedef struct {
 	int _tag;
@@ -10,20 +11,12 @@ typedef struct {
 	char **vmargument_array;  //	Z<Unknown_USER_Type /*C.Array[C.str]*/>  //!!
 } Z113;  // class Arguments
 
- typedef struct {
-	int _tag;
-} ooZ110;  // class Boolean
-
-typedef int Z110;
-
- typedef struct {
-	int _tag;
-
-} ooZ114;  // class Integer64
-
-typedef int Z114;
+typedef bool Z110;  // class Boolean
+typedef int  Z114;  // class Integer64
 
 Z114 Z113arguments(Z113* vsc);
 Z113* ZC113(int, char**);
+char* z113argument_string(Z113*, int vaindex);
+
 
 #endif

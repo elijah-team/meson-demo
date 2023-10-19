@@ -1,25 +1,23 @@
-#define z112forEach Z112forEach
-#define z107listFiles Z107listFiles
-
 #include <gc.h>
+#include <stdbool.h>
+
 #include <stdio.h>
-#include "MainLogic.h"
+
+#include "Prelude/Prelude.h"
 #include "stdlib/std.io/Directory.h"
 #include "stdlib/std.collections/List_111.h"
 #include "stdlib/std.collections/List_112.h"
-#include <stdbool.h>
 
-#define None NULL
-
+#include "listfolders3/wpkotlin_c.demo.list_folders/MainLogic.h"
 
 Z105* ZC105() {
-	Z105* R = GC_malloc(sizeof(Z105));
+	Z105* R = (Z105*)GC_malloc(sizeof(Z105));
 	R->_tag = 105;
 	return R;
 } // class MainLogic
 
-bool __f1(/*char *c*/) {
-	return false;
+bool __f1(char *c) {
+	return true;
 }
 
 bool __neq__(void* p1, void* p2) {
@@ -27,30 +25,26 @@ bool __neq__(void* p1, void* p2) {
 }
 
 void p1(char *p) {
-	printf("%s", p);
+	printf("%s\n", p);
 }
 
- void/*Unit*/ Z105main(Z105* vsc, /*395*/Z111* vaargs) {
-__label1:
+void z105main(Z105* vsc, Z113* vaargs) {
 	bool vsb;
-	//Z105 vsr;
+__label1:
 	{
-		///*8889*//*552*/void (*vvfun)(void) /*879*/;//vvfun;
-
 		Z__543 vvfun = __f1;
-		Z112* /*879*/vvfolders;
-		/*267*//*879*/vvfolders = /*827*/z107listFiles(ZC107(), /*853*//*879*/&vvfun);
+		Z112* vvfolders = z107listFiles(ZC107(z113argument_string(vaargs, 1)), &vvfun);
 		{
-			//Z110*
-			bool /*879*/vt1;
-			/*267*//*879*/vt1 = /*684*/__neq__/*810*/(/*853*//*879*/vvfolders, /*748*/None);;
-			vsb = /*879*/vt1 != true;
-			if (!vsb) goto __label0;
+			Z110 vt1;
+			vt1 = __neq__(vvfolders, None);
+			vsb = vt1 == true;
+			//if (!vsb) goto __label0;
 			{
 				{
-					/*427-2*/z112forEach(vvfolders, /*673*//*!!!vvfun*/p1);
+					z112forEach(vvfolders, p1);
 				}
 __label0:
+				;
 			}
 		}
 	}

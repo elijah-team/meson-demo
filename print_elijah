@@ -1,0 +1,10 @@
+#!/bin/sh
+DIR="code2"
+DATE=`date +%b%d-%H%M`
+OUT=./meson-demo-$DATE.txt
+
+find $DIR -type f | grep -v code2/B | grep -v code2/_build | sort > list
+(pwd; git log | head ; cat list |  xargs md5sum ) >> $OUT
+echo =========*=========*=========*=========*=========*=========*=========*=========*=========*=========* >> $OUT
+cat list |  xargs pr -f -l 80 | nl >> $OUT
+rm list
